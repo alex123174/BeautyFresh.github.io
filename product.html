@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BeautyFresh – Skin Whitening Collection</title>
+<style>
+body {
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  background: #fff;
+  color: #333;
+  text-align: center;
+}
+
+header {
+  padding: 20px;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.banner {
+  background: linear-gradient(to right, #ffbad6, #ffe4ef);
+  padding: 60px 20px;
+  color: #222;
+}
+
+.banner h1 {
+  font-size: 42px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 15px;
+  cursor: pointer;
+  background: #fafafa;
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.product img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.product h3 {
+  margin: 12px 0 0;
+  font-size: 16px;
+  color: #222;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  margin: 5% auto;
+  display: block;
+  max-width: 600px;
+  width: 80%;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.8); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<header>BEAUTY<span style="color:#ff7ca8;">fresh</span></header>
+
+<div class="banner">
+  <h1>Christmas Skin Whitening Collection</h1>
+  <p>Explore our premium brightening and glow-boosting creams</p>
+</div>
+
+<section class="products">
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/files/guerlain-orchidee-imperail-rich-day-cream-50ml_large.jpg?v=1720625923')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/files/guerlain-orchidee-imperail-rich-day-cream-50ml_large.jpg?v=1720625923" alt="Product 1">
+    <h3>Guerlain Orchidee Imperiale Rich Day Cream</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/products/cell-skin-universal-cream-50ml_large.jpg?v=1626261748')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/products/cell-skin-universal-cream-50ml_large.jpg?v=1626261748" alt="Product 2">
+    <h3>Cell Skin Universal Cream</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/products/magnolia-rosy-cream_large.jpg?v=1614780022')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/products/magnolia-rosy-cream_large.jpg?v=1614780022" alt="Product 3">
+    <h3>Magnolia Rosy Whitening Cream</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/files/mooi-clanse-brightening-tone-mist_0c86ab1c-6ee6-4691-beb5-fa7bec54a216_large.jpg?v=1761933486')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/files/mooi-clanse-brightening-tone-mist_0c86ab1c-6ee6-4691-beb5-fa7bec54a216_large.jpg?v=1761933486" alt="Product 4">
+    <h3>Mooi Clanse Brightening Tone Mist</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/files/Teoxane-urban-sheild-30spf-2_large.jpg?v=1758730385')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/files/Teoxane-urban-sheild-30spf-2_large.jpg?v=1758730385" alt="Product 5">
+    <h3>Teoxane Urban Shield SPF 30</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://beautyfresh.co.uk/cdn/shop/products/decleor-aromessence-green-mandarine-serum-15ml_1_220x.jpg?v=1583516627')">
+    <img src="https://beautyfresh.co.uk/cdn/shop/products/decleor-aromessence-green-mandarine-serum-15ml_1_220x.jpg?v=1583516627" alt="Product 6">
+    <h3>Decleor Green Mandarine Serum</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://beautyfresh.co.uk/cdn/shop/products/decleor-vitamin-glow-cream-box_220x.jpg?v=1638369297')">
+    <img src="https://beautyfresh.co.uk/cdn/shop/products/decleor-vitamin-glow-cream-box_220x.jpg?v=1638369297" alt="Product 7">
+    <h3>Decleor Vitamin Glow Cream</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/files/matis-xmas-giftset-delicate_large.jpg?v=1758638882')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/files/matis-xmas-giftset-delicate_large.jpg?v=1758638882" alt="Product 8">
+    <h3>Matis Xmas Giftset Delicate</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/files/benbutton-collagen-peptides-bovine-proteinpowder-2_large.jpg?v=1757605584')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/files/benbutton-collagen-peptides-bovine-proteinpowder-2_large.jpg?v=1757605584" alt="Product 9">
+    <h3>BenButton Collagen Peptides Powder</h3>
+  </div>
+
+  <div class="product" onclick="showImage('https://cdn.shopify.com/s/files/1/0328/3002/9960/files/caci-hydro-mask-5pk-insta_large.jpg?v=1755866050')">
+    <img src="https://cdn.shopify.com/s/files/1/0328/3002/9960/files/caci-hydro-mask-5pk-insta_large.jpg?v=1755866050" alt="Product 10">
+    <h3>CACI Hydro Mask (5 Pack)</h3>
+  </div>
+</section>
+
+<!-- Modal -->
+<div id="imageModal" class="modal" onclick="closeModal()">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+<script>
+function showImage(src) {
+  const modal = document.getElementById("imageModal");
+  const img = document.getElementById("modalImg");
+  img.src = src;
+  modal.style.display = "block";
+}
+
+function closeModal() {
+  document.getElementById("imageModal").style.display = "none";
+}
+</script>
+
+</body>
+</html>
